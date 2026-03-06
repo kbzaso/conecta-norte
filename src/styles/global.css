@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-north: #2c1d4d;
+  --color-sky: #603bff;
+  --color-sand: #e8e0ff;
+  --color-terra: #e88900;
+  --color-surface: #f9f9f9;
+  --color-accent: #ffaa5c;
+  --color-electric: #332df9;
+  --color-verde: #8bc4d5;
+
+  --animate-fade-up: fadeUp 0.8s ease both;
+  --animate-float-card: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-surface);
+    color: var(--color-north);
+    overflow-x: hidden;
+  }
+}
