@@ -3,29 +3,39 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 ---
 
 <!-- ── NAV ── -->
-<nav class="fixed top-5 left-6 right-6 z-50 flex items-center justify-between px-8 py-[0.9rem] bg-white rounded-xl shadow-lg max-w-300 mx-auto">
-  <div class="font-black text-[1.4rem] tracking-[-0.02em] text-north">
-    Conecta<span class="text-sky">Norte</span>
+<nav
+  class="fixed top-5 left-6 right-6 z-50 flex items-center justify-between px-8 bg-white rounded-sm shadow-lg max-w-300 mx-auto"
+>
+  <div>
+    <img
+      src="/logo_nav.svg"
+      alt="Conecta Norte"
+      height="200"
+      width="200"
+      class="w-28 h-20 inline-block mr-2"
+    />
   </div>
 
   <ul class="hidden lg:flex gap-8 list-none">
-    {[
-      ['#que-es',          'Qué es'],
-      ['#el-programa',     'Programa'],
-      ['#ruta-estudiante', 'Ruta'],
-      ['#a-quienes',       'Postulantes'],
-      ['#aliados',         'Aliados'],
-      ['#postulacion',     'Postular'],
-    ].map(([href, label]) => (
-      <li>
-        <a
-          href={href}
-          class="text-[0.8rem] font-semibold tracking-[0.06em] text-north/55 no-underline uppercase transition-colors duration-200 hover:text-sky"
-        >
-          {label}
-        </a>
-      </li>
-    ))}
+    {
+      [
+        ["#que-es", "Qué es"],
+        ["#el-programa", "Programa"],
+        ["#ruta-estudiante", "Ruta"],
+        ["#a-quienes", "Postulantes"],
+        ["#aliados", "Aliados"],
+        ["#postulacion", "Postular"],
+      ].map(([href, label]) => (
+        <li>
+          <a
+            href={href}
+            class="text-[0.8rem] font-semibold tracking-[0.06em] text-north/55 no-underline uppercase transition-colors duration-200 hover:text-sky"
+          >
+            {label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 
   <button
@@ -33,9 +43,15 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
     aria-label="Abrir menú"
     class="lg:hidden flex flex-col justify-center gap-[5px] w-9 h-9 bg-transparent border-0 cursor-pointer p-1"
   >
-    <span class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"></span>
-    <span class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"></span>
-    <span class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"></span>
+    <span
+      class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"
+    ></span>
+    <span
+      class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"
+    ></span>
+    <span
+      class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"
+    ></span>
   </button>
 </nav>
 
@@ -43,7 +59,8 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 <div
   id="menuOverlay"
   class="fixed inset-0 z-[200] bg-north/45 backdrop-blur-sm invisible opacity-0 transition-[opacity,visibility] duration-300 data-[open]:visible data-[open]:opacity-100"
-></div>
+>
+</div>
 
 <!-- ── MOBILE MENU PANEL ── -->
 <div
@@ -54,79 +71,120 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
     id="menuClose"
     aria-label="Cerrar menú"
     class="self-end bg-transparent border-0 cursor-pointer text-[1.3rem] text-north/50 p-1 mb-8 transition-colors duration-200 hover:text-north"
-  >✕</button>
+    >✕</button
+  >
 
   <div class="font-black text-2xl text-north mb-10">
     Conecta<span class="text-sky">Norte</span>
   </div>
 
   <ul class="list-none flex flex-col">
-    {[
-      ['#que-es',          'Qué es'],
-      ['#el-programa',     'Programa'],
-      ['#ruta-estudiante', 'Ruta'],
-      ['#a-quienes',       'Postulantes'],
-      ['#aliados',         'Aliados'],
-      ['#postulacion',     'Postular'],
-    ].map(([href, label]) => (
-      <li>
-        <a
-          href={href}
-          class="block text-base font-semibold tracking-[0.04em] text-north/65 no-underline uppercase py-[0.85rem] border-b border-north/[0.07] transition-colors duration-200 hover:text-sky"
-        >
-          {label}
-        </a>
-      </li>
-    ))}
+    {
+      [
+        ["#que-es", "Qué es"],
+        ["#el-programa", "Programa"],
+        ["#ruta-estudiante", "Ruta"],
+        ["#a-quienes", "Postulantes"],
+        ["#aliados", "Aliados"],
+        ["#postulacion", "Postular"],
+      ].map(([href, label]) => (
+        <li>
+          <a
+            href={href}
+            class="block text-base font-semibold tracking-[0.04em] text-north/65 no-underline uppercase py-[0.85rem] border-b border-north/[0.07] transition-colors duration-200 hover:text-sky"
+          >
+            {label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </div>
 
 <!-- ── HERO ── -->
-<section id="inicio" class="relative min-h-screen bg-north items-center overflow-hidden pt-25 ">
-  <div class="absolute rounded-full pointer-events-none w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(96,59,255,0.3)_0%,transparent_70%)] -top-[200px] -right-[100px]"></div>
-  <div class="absolute rounded-full pointer-events-none w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,170,92,0.2)_0%,transparent_70%)] -bottom-[100px] left-[100px]"></div>
-  <div class="absolute inset-0" style={textureStyle}></div>
-<div class="flex mx-auto w-full max-w-300 justify-between">
-  <div class="px-8 py-8 lg:py-24 relative z-10">
-    <div class="inline-block text-xs font-medium tracking-wide uppercase text-accent border border-sky/40 px-4 py-[0.4rem] rounded-full mb-8 animate-fade-up [animation-delay:0.1s]">
-      ✦ Programa de Vinculación 2026
-    </div>
-    <h1 class="font-black text-3xl md:text-5xl lg:text-6xl leading-none text-white mb-6 animate-fade-up [animation-delay:0.25s]">
-      <em class="italic font-light text-sand">El norte es el futuro</em><br/>Nosotros el puente
-    </h1>
-    <p class="text-[1.1rem] leading-[1.7] text-sand/75 max-w-[480px] mb-12 animate-fade-up [animation-delay:0.4s]">
-      Conectamos a los mejores estudiantes de la región con las industrias que impulsan el desarrollo del norte de Chile.
-    </p>
-    <div class="flex flex-col md:flex-row gap-4 items-center animate-fade-up [animation-delay:0.55s]">
-      <a
-        href="#postulacion"
-        class="bg-accent text-north font-bold text-sm tracking-[0.05em] uppercase px-8 py-4 rounded-[0.3rem] no-underline inline-block transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(240,165,0,0.3)]"
-      >Postular ahora →</a>
-      <a
-        href="#que-es"
-        class="text-sand text-sm font-medium no-underline flex items-center gap-2 transition-[gap] duration-200 hover:gap-3"
-      >Conoce el programa <span>↓</span></a>
-    </div>
+<section
+  id="inicio"
+  class="relative min-h-screen bg-north items-center flex overflow-hidden pt-25"
+>
+  <div
+    class="absolute rounded-full pointer-events-none w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(96,59,255,0.3)_0%,transparent_70%)] -top-[200px] -right-[100px]"
+  >
   </div>
+  <div
+    class="absolute rounded-full pointer-events-none w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,170,92,0.2)_0%,transparent_70%)] -bottom-[100px] left-[100px]"
+  >
+  </div>
+  <div class="absolute inset-0" style={textureStyle}></div>
+  <div class="flex mx-auto w-full max-w-300 justify-between">
+    <div class="px-8 py-8 lg:py-24 relative z-10">
+      <div
+        class="inline-block text-xs font-medium tracking-wide uppercase text-accent border border-sky/40 px-4 py-[0.4rem] rounded-full mb-8 animate-fade-up animation-delay:0.1s"
+      >
+        ✦ Programa de Vinculación 2026
+      </div>
+      <h1
+        class="font-black text-3xl md:text-5xl lg:text-6xl leading-none text-white mb-6 animate-fade-up animation-delay:0.25s"
+      >
+        <em class="italic font-light text-sand">El norte es el futuro</em><br
+        />Nosotros el puente
+      </h1>
+      <p
+        class="text-[1.1rem] leading-[1.7] text-sand/75 max-w-120 mb-12 animate-fade-up animation-delay:0.4s"
+      >
+        Conectamos a los mejores estudiantes de la región con las industrias que
+        impulsan el desarrollo del norte de Chile.
+      </p>
+      <div
+        class="flex flex-col md:flex-row gap-4 items-center animate-fade-up animation-delay:0.55s"
+      >
+        <a
+          href="#postulacion"
+          class="bg-accent text-north font-bold text-sm tracking-[0.05em] uppercase px-8 py-4 rounded-sm no-underline inline-block transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(240,165,0,0.3)]"
+          >Postular ahora →</a
+        >
+        <a
+          href="#que-es"
+          class="text-sand text-sm font-medium no-underline flex items-center gap-2 transition-[gap] duration-200 hover:gap-3"
+          >Conoce el programa <span>↓</span></a
+        >
+      </div>
+    </div>
 
-  <div class="hidden md:flex py-16 z-10 justify-center items-center">
-    <div class="relative w-[360px] h-[420px]">
-      <div class="absolute w-[300px] h-[340px] top-0 left-[40px] rotate-3 bg-accent/12 border border-sand/15 rounded-3xl p-8 backdrop-blur-md"></div>
-      <div class="absolute w-[320px] h-[360px] top-[30px] left-[20px] bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-3xl p-8 backdrop-blur-md animate-float-card">
-        <div class="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center text-2xl mb-6">🎓</div>
-        <div class="text-[0.7rem] uppercase tracking-[0.1em] text-sand/50 mb-2">Estudiantes conectados</div>
-        <div class="font-black text-[2.5rem] leading-none text-white mb-1">+500</div>
-        <div class="text-[0.85rem] text-sand/60">Jóvenes vinculados a la industria regional cada año</div>
-        <div class="flex gap-[0.4rem] mt-8">
-          <div class="w-2 h-2 rounded-full bg-accent"></div>
-          <div class="w-2 h-2 rounded-full bg-accent"></div>
-          <div class="w-2 h-2 rounded-full bg-accent"></div>
-          <div class="w-2 h-2 rounded-full bg-sand/30"></div>
-          <div class="w-2 h-2 rounded-full bg-sand/30"></div>
+    <div class="hidden md:flex py-16 z-10 justify-center items-center">
+      <div class="relative w-90 h-105">
+        <div
+          class="absolute w-[300px] h-[340px] top-0 left-[40px] rotate-3 bg-accent/12 border border-sand/15 rounded-3xl p-8 backdrop-blur-md"
+        >
+        </div>
+        <div
+          class="absolute w-[320px] h-[360px] top-[30px] left-[20px] bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-3xl p-8 backdrop-blur-md animate-float-card"
+        >
+          <div
+            class="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center text-2xl mb-6"
+          >
+            🎓
+          </div>
+          <div
+            class="text-[0.7rem] uppercase tracking-[0.1em] text-sand/50 mb-2"
+          >
+            Estudiantes conectados
+          </div>
+          <div class="font-black text-[2.5rem] leading-none text-white mb-1">
+            +500
+          </div>
+          <div class="text-[0.85rem] text-sand/60">
+            Jóvenes vinculados a la industria regional cada año
+          </div>
+          <div class="flex gap-[0.4rem] mt-8">
+            <div class="w-2 h-2 rounded-full bg-accent"></div>
+            <div class="w-2 h-2 rounded-full bg-accent"></div>
+            <div class="w-2 h-2 rounded-full bg-accent"></div>
+            <div class="w-2 h-2 rounded-full bg-sand/30"></div>
+            <div class="w-2 h-2 rounded-full bg-sand/30"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </section>
 
@@ -135,41 +193,86 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
   <div class="max-w-300 mx-auto px-8 py-24 lg:px-16">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
       <div>
-        <span class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4">01 — Qué es Conecta Norte</span>
-        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">Puente entre talento y oportunidad</h2>
-        <p class="text-[1.05rem] leading-[1.75] text-north/70 max-w-[620px] mb-12">
-          Conecta Norte es un programa de vinculación que acerca a estudiantes universitarios y técnicos con las principales industrias de la región. Creemos en el poder transformador del norte, y en que los jóvenes locales deben ser protagonistas de su desarrollo.
+        <span
+          class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4"
+          >01 — Qué es Conecta Norte</span
+        >
+        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">
+          Puente entre talento y oportunidad
+        </h2>
+        <p
+          class="text-[1.05rem] leading-[1.75] text-north/70 max-w-[620px] mb-12"
+        >
+          Conecta Norte es un programa de vinculación que acerca a estudiantes
+          universitarios y técnicos con las principales industrias de la región.
+          Creemos en el poder transformador del norte, y en que los jóvenes
+          locales deben ser protagonistas de su desarrollo.
         </p>
         <div class="flex gap-12 flex-wrap">
           <div>
-            <div class="font-black text-[2.8rem] leading-none text-north">8<span class="text-sky">+</span></div>
+            <div class="font-black text-[2.8rem] leading-none text-north">
+              8<span class="text-sky">+</span>
+            </div>
             <div class="text-[0.8rem] text-north/50 mt-1">Empresas aliadas</div>
           </div>
           <div>
-            <div class="font-black text-[2.8rem] leading-none text-north">3<span class="text-sky">ra</span></div>
-            <div class="text-[0.8rem] text-north/50 mt-1">Versión del programa</div>
+            <div class="font-black text-[2.8rem] leading-none text-north">
+              3<span class="text-sky">ra</span>
+            </div>
+            <div class="text-[0.8rem] text-north/50 mt-1">
+              Versión del programa
+            </div>
           </div>
           <div>
-            <div class="font-black text-[2.8rem] leading-none text-north">90<span class="text-sky">%</span></div>
-            <div class="text-[0.8rem] text-north/50 mt-1">Empleabilidad post-programa</div>
+            <div class="font-black text-[2.8rem] leading-none text-north">
+              90<span class="text-sky">%</span>
+            </div>
+            <div class="text-[0.8rem] text-north/50 mt-1">
+              Empleabilidad post-programa
+            </div>
           </div>
         </div>
       </div>
 
       <div class="relative">
-        <div class="font-black text-[12rem] leading-none text-sky/[0.08] absolute -top-8 -left-8 z-0 pointer-events-none select-none">CN</div>
+        <div
+          class="font-black text-[12rem] leading-none text-sky/[0.08] absolute -top-8 -left-8 z-0 pointer-events-none select-none"
+        >
+          CN
+        </div>
         <div class="flex flex-col gap-4 relative z-10">
-          <div class="bg-surface border-l-4 border-l-sky rounded-lg px-6 py-5 transition-[transform,box-shadow] duration-200 hover:translate-x-1.5 hover:shadow-[-4px_0_20px_rgba(96,59,255,0.15)]">
-            <div class="font-semibold text-[0.95rem] mb-1">🌎 Enfoque regional</div>
-            <div class="text-[0.85rem] text-north/60 leading-[1.5]">Diseñado específicamente para las necesidades del norte de Chile y su ecosistema productivo.</div>
+          <div
+            class="bg-surface border-l-4 border-l-sky rounded-lg px-6 py-5 transition-[transform,box-shadow] duration-200 hover:translate-x-1.5 hover:shadow-[-4px_0_20px_rgba(96,59,255,0.15)]"
+          >
+            <div class="font-semibold text-[0.95rem] mb-1">
+              🌎 Enfoque regional
+            </div>
+            <div class="text-[0.85rem] text-north/60 leading-[1.5]">
+              Diseñado específicamente para las necesidades del norte de Chile y
+              su ecosistema productivo.
+            </div>
           </div>
-          <div class="bg-surface border-l-4 border-l-terra rounded-lg px-6 py-5 ml-8 transition-[transform,box-shadow] duration-200 hover:translate-x-1.5 hover:shadow-[-4px_0_20px_rgba(96,59,255,0.15)]">
-            <div class="font-semibold text-[0.95rem] mb-1">🤝 Vinculación real</div>
-            <div class="text-[0.85rem] text-north/60 leading-[1.5]">No es solo teoría: los participantes trabajan junto a profesionales de la industria.</div>
+          <div
+            class="bg-surface border-l-4 border-l-terra rounded-lg px-6 py-5 ml-8 transition-[transform,box-shadow] duration-200 hover:translate-x-1.5 hover:shadow-[-4px_0_20px_rgba(96,59,255,0.15)]"
+          >
+            <div class="font-semibold text-[0.95rem] mb-1">
+              🤝 Vinculación real
+            </div>
+            <div class="text-[0.85rem] text-north/60 leading-[1.5]">
+              No es solo teoría: los participantes trabajan junto a
+              profesionales de la industria.
+            </div>
           </div>
-          <div class="bg-surface border-l-4 border-l-accent rounded-lg px-6 py-5 transition-[transform,box-shadow] duration-200 hover:translate-x-1.5 hover:shadow-[-4px_0_20px_rgba(96,59,255,0.15)]">
-            <div class="font-semibold text-[0.95rem] mb-1">⚡ Impacto inmediato</div>
-            <div class="text-[0.85rem] text-north/60 leading-[1.5]">Al finalizar el programa, los estudiantes cuentan con experiencia laboral concreta y una red de contactos activa.</div>
+          <div
+            class="bg-surface border-l-4 border-l-accent rounded-lg px-6 py-5 transition-[transform,box-shadow] duration-200 hover:translate-x-1.5 hover:shadow-[-4px_0_20px_rgba(96,59,255,0.15)]"
+          >
+            <div class="font-semibold text-[0.95rem] mb-1">
+              ⚡ Impacto inmediato
+            </div>
+            <div class="text-[0.85rem] text-north/60 leading-[1.5]">
+              Al finalizar el programa, los estudiantes cuentan con experiencia
+              laboral concreta y una red de contactos activa.
+            </div>
           </div>
         </div>
       </div>
@@ -179,30 +282,72 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 
 <!-- ── EL PROGRAMA ── -->
 <section id="el-programa" class="relative bg-north overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-[#2c1d4d] via-[#2c1d4d] to-[#1e1435]"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-[#2c1d4d] via-[#2c1d4d] to-[#1e1435]"
+  >
+  </div>
   <div class="max-w-[1200px] mx-auto px-8 py-24 lg:px-16 relative z-10">
     <div class="mb-16">
-      <span class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-accent mb-4">02 — El Programa</span>
-      <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] text-white mb-6">Formación, red y experiencia</h2>
+      <span
+        class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-accent mb-4"
+        >02 — El Programa</span
+      >
+      <h2
+        class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] text-white mb-6"
+      >
+        Formación, red y experiencia
+      </h2>
       <p class="text-[1.05rem] leading-[1.75] text-sand/65 max-w-[700px]">
-        Un programa estructurado en fases que combina formación de habilidades blandas, mentoría con líderes de industria y una experiencia de inserción laboral real.
+        Un programa estructurado en fases que combina formación de habilidades
+        blandas, mentoría con líderes de industria y una experiencia de
+        inserción laboral real.
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {[
-        ['01', 'Formación y Habilidades',       'Talleres intensivos de liderazgo, comunicación efectiva, trabajo en equipo y preparación para el mundo laboral. Dictados por expertos de la industria.'],
-        ['02', 'Mentoría 1 a 1',                'Cada participante es acompañado por un mentor profesional activo en la industria regional, quien guía su desarrollo personal y profesional durante todo el programa.'],
-        ['03', 'Visitas y Experiencia Laboral', 'Visitas técnicas a faenas, plantas y oficinas de las empresas aliadas. Conoce desde adentro cómo operan las industrias que mueven el norte.'],
-        ['04', 'Networking Estratégico',         'Eventos de networking con ejecutivos, gerentes y profesionales. Una red de contactos que perdura más allá del programa.'],
-        ['05', 'Proyecto de Innovación',         'Equipos de estudiantes desarrollan propuestas de solución a desafíos reales presentados por las empresas aliadas, con posibilidad de implementación.'],
-        ['06', 'Demo Day & Egreso',              'Presentación final de proyectos ante ejecutivos de la industria. Ceremonia de egreso con entrega de certificados y reconocimientos especiales.'],
-      ].map(([num, title, text]) => (
-        <div class="bg-white/[0.04] border border-sand/10 rounded-2xl p-8 transition-[background,transform] duration-300 hover:bg-sky/20 hover:-translate-y-1">
-          <div class="font-black text-[3rem] leading-none text-accent/30 mb-4">{num}</div>
-          <div class="text-[1.1rem] font-semibold text-sand mb-3">{title}</div>
-          <div class="text-[0.88rem] leading-[1.65] text-sand/55">{text}</div>
-        </div>
-      ))}
+      {
+        [
+          [
+            "01",
+            "Formación y Habilidades",
+            "Talleres intensivos de liderazgo, comunicación efectiva, trabajo en equipo y preparación para el mundo laboral. Dictados por expertos de la industria.",
+          ],
+          [
+            "02",
+            "Mentoría 1 a 1",
+            "Cada participante es acompañado por un mentor profesional activo en la industria regional, quien guía su desarrollo personal y profesional durante todo el programa.",
+          ],
+          [
+            "03",
+            "Visitas y Experiencia Laboral",
+            "Visitas técnicas a faenas, plantas y oficinas de las empresas aliadas. Conoce desde adentro cómo operan las industrias que mueven el norte.",
+          ],
+          [
+            "04",
+            "Networking Estratégico",
+            "Eventos de networking con ejecutivos, gerentes y profesionales. Una red de contactos que perdura más allá del programa.",
+          ],
+          [
+            "05",
+            "Proyecto de Innovación",
+            "Equipos de estudiantes desarrollan propuestas de solución a desafíos reales presentados por las empresas aliadas, con posibilidad de implementación.",
+          ],
+          [
+            "06",
+            "Demo Day & Egreso",
+            "Presentación final de proyectos ante ejecutivos de la industria. Ceremonia de egreso con entrega de certificados y reconocimientos especiales.",
+          ],
+        ].map(([num, title, text]) => (
+          <div class="bg-white/[0.04] border border-sand/10 rounded-2xl p-8 transition-[background,transform] duration-300 hover:bg-sky/20 hover:-translate-y-1">
+            <div class="font-black text-[3rem] leading-none text-accent/30 mb-4">
+              {num}
+            </div>
+            <div class="text-[1.1rem] font-semibold text-sand mb-3">
+              {title}
+            </div>
+            <div class="text-[0.88rem] leading-[1.65] text-sand/55">{text}</div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
@@ -210,51 +355,98 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 <!-- ── RUTA DEL ESTUDIANTE ── -->
 <section id="ruta-estudiante" class="relative bg-surface">
   <div class="max-w-[1200px] mx-auto px-8 py-24 lg:px-16">
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start"
+    >
       <div>
-        <span class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4">03 — Ruta del Estudiante</span>
-        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">Tu camino en Conecta Norte</h2>
+        <span
+          class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4"
+          >03 — Ruta del Estudiante</span
+        >
+        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">
+          Tu camino en Conecta Norte
+        </h2>
         <p class="text-[1.05rem] leading-[1.75] text-north/70 mb-12">
-          Desde que postulas hasta el día en que egresás con experiencia real y una red de contactos sólida. Así se ve el viaje.
+          Desde que postulas hasta el día en que egresás con experiencia real y
+          una red de contactos sólida. Así se ve el viaje.
         </p>
 
         <div class="relative">
-          <div class="absolute left-[19px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-sky via-terra to-accent"></div>
-          {[
-            { dot: 'border-sky text-sky',   title: 'Postulación en línea',    text: 'Completas el formulario con tus datos, carrera, universidad y motivación. El proceso es 100% online.' },
-            { dot: 'border-terra text-terra', title: 'Proceso de selección',   text: 'Evaluamos tu perfil y realizamos una entrevista breve para conocerte mejor y asignarte al mejor mentor.' },
-            { dot: 'border-accent text-accent', title: 'Inducción y bienvenida', text: 'Sesión de arranque donde conoces a tu cohorte, tu mentor y el equipo Conecta Norte.' },
-            { dot: 'border-verde text-verde',  title: 'Programa (12 semanas)', text: 'Talleres, mentoría, visitas y desarrollo de proyecto. El corazón de la experiencia.' },
-            { dot: 'border-sky text-sky',   title: 'Demo Day & Egreso',       text: 'Presentas tu proyecto, recibes tu certificado y pasas a ser parte de la red alumni Conecta Norte.' },
-          ].map(({ dot, title, text }, i) => (
-            <div class="flex gap-6 items-start mb-10 relative">
-              <div class={`flex-shrink-0 w-10 h-10 rounded-full bg-white border-[3px] ${dot} flex items-center justify-center font-black text-base z-10`}>{i + 1}</div>
-              <div class="pt-2">
-                <div class="font-bold text-base mb-1">{title}</div>
-                <div class="text-[0.88rem] text-north/60 leading-[1.6]">{text}</div>
+          <div
+            class="absolute left-[19px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-sky via-terra to-accent"
+          >
+          </div>
+          {
+            [
+              {
+                dot: "border-sky text-sky",
+                title: "Postulación en línea",
+                text: "Completas el formulario con tus datos, carrera, universidad y motivación. El proceso es 100% online.",
+              },
+              {
+                dot: "border-terra text-terra",
+                title: "Proceso de selección",
+                text: "Evaluamos tu perfil y realizamos una entrevista breve para conocerte mejor y asignarte al mejor mentor.",
+              },
+              {
+                dot: "border-accent text-accent",
+                title: "Inducción y bienvenida",
+                text: "Sesión de arranque donde conoces a tu cohorte, tu mentor y el equipo Conecta Norte.",
+              },
+              {
+                dot: "border-verde text-verde",
+                title: "Programa (12 semanas)",
+                text: "Talleres, mentoría, visitas y desarrollo de proyecto. El corazón de la experiencia.",
+              },
+              {
+                dot: "border-sky text-sky",
+                title: "Demo Day & Egreso",
+                text: "Presentas tu proyecto, recibes tu certificado y pasas a ser parte de la red alumni Conecta Norte.",
+              },
+            ].map(({ dot, title, text }, i) => (
+              <div class="flex gap-6 items-start mb-10 relative">
+                <div
+                  class={`flex-shrink-0 w-10 h-10 rounded-full bg-white border-[3px] ${dot} flex items-center justify-center font-black text-base z-10`}
+                >
+                  {i + 1}
+                </div>
+                <div class="pt-2">
+                  <div class="font-bold text-base mb-1">{title}</div>
+                  <div class="text-[0.88rem] text-north/60 leading-[1.6]">
+                    {text}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
 
       <div class="bg-north rounded-3xl p-12 text-white">
-        <span class="block text-[0.7rem] tracking-[0.15em] uppercase text-accent mb-4">✦ ¿Por qué Conecta Norte?</span>
-        <h3 class="font-black text-[2rem] leading-[1.15] mb-6">Lo que te llevas al <em class="italic font-light text-sand">egresar</em></h3>
+        <span
+          class="block text-[0.7rem] tracking-[0.15em] uppercase text-accent mb-4"
+          >✦ ¿Por qué Conecta Norte?</span
+        >
+        <h3 class="font-black text-[2rem] leading-[1.15] mb-6">
+          Lo que te llevas al <em class="italic font-light text-sand"
+            >egresar</em>
+        </h3>
         <ul class="list-none flex flex-col gap-4">
-          {[
-            'Certificado de participación avalado por empresas de la industria regional',
-            'Experiencia práctica y trabajo en proyectos reales con impacto en el territorio',
-            'Mentoría personalizada de un profesional activo en tu área de interés',
-            'Red de contactos con ejecutivos y profesionales del norte de Chile',
-            'Ventaja competitiva al momento de buscar tu primer empleo o práctica',
-            'Acceso a la comunidad alumni con eventos y oportunidades exclusivas',
-          ].map((item) => (
-            <li class="flex items-start gap-3 text-[0.9rem] text-sand/75">
-              <span class="text-accent flex-shrink-0 mt-px">✦</span>
-              {item}
-            </li>
-          ))}
+          {
+            [
+              "Certificado de participación avalado por empresas de la industria regional",
+              "Experiencia práctica y trabajo en proyectos reales con impacto en el territorio",
+              "Mentoría personalizada de un profesional activo en tu área de interés",
+              "Red de contactos con ejecutivos y profesionales del norte de Chile",
+              "Ventaja competitiva al momento de buscar tu primer empleo o práctica",
+              "Acceso a la comunidad alumni con eventos y oportunidades exclusivas",
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-[0.9rem] text-sand/75">
+                <span class="text-accent flex-shrink-0 mt-px">✦</span>
+                {item}
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
@@ -266,45 +458,94 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
   <div class="max-w-[1200px] mx-auto px-8 py-24 lg:px-16">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div>
-        <span class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4">04 — A quiénes buscamos</span>
-        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">Talento con propósito regional</h2>
+        <span
+          class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4"
+          >04 — A quiénes buscamos</span
+        >
+        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">
+          Talento con propósito regional
+        </h2>
         <p class="text-[1.05rem] leading-[1.75] text-north/70 mb-8">
-          Buscamos estudiantes comprometidos con su desarrollo y con el futuro de la región. No importa tanto lo que sabes hoy, sino tu actitud, tu ganas de crecer y tu conexión con el territorio.
+          Buscamos estudiantes comprometidos con su desarrollo y con el futuro
+          de la región. No importa tanto lo que sabes hoy, sino tu actitud, tu
+          ganas de crecer y tu conexión con el territorio.
         </p>
-        <div class="bg-gradient-to-br from-sky to-[#3b21b5] rounded-2xl p-8 text-white">
-          <div class="font-bold text-[0.95rem] text-sand mb-4">Requisitos mínimos</div>
+        <div
+          class="bg-gradient-to-br from-sky to-[#3b21b5] rounded-2xl p-8 text-white"
+        >
+          <div class="font-bold text-[0.95rem] text-sand mb-4">
+            Requisitos mínimos
+          </div>
           <ul class="list-none flex flex-col gap-3">
-            {[
-              'Estudiante universitario o técnico de nivel superior',
-              'Al menos 2do año de carrera (o 1er año técnico)',
-              'Residencia o estudio en la región norte',
-              'Disponibilidad de 6–8 hrs semanales durante 12 semanas',
-              'Motivación genuina por vincularse a la industria',
-            ].map((item) => (
-              <li class="flex items-center gap-2 text-[0.88rem] text-white/85">
-                <span class="text-accent font-bold">→</span>
-                {item}
-              </li>
-            ))}
+            {
+              [
+                "Estudiante universitario o técnico de nivel superior",
+                "Al menos 2do año de carrera (o 1er año técnico)",
+                "Residencia o estudio en la región norte",
+                "Disponibilidad de 6–8 hrs semanales durante 12 semanas",
+                "Motivación genuina por vincularse a la industria",
+              ].map((item) => (
+                <li class="flex items-center gap-2 text-[0.88rem] text-white/85">
+                  <span class="text-accent font-bold">→</span>
+                  {item}
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {[
-          { icon: '🎯', title: 'Ingeniería y Tecnología',    text: 'Ingeniería civil, industrial, en minas, informática y áreas afines.',             border: 'border-t-sky' },
-          { icon: '⚗️', title: 'Ciencias y Medio Ambiente', text: 'Geología, química, biología, sustentabilidad y recursos naturales.',                border: 'border-t-terra' },
-          { icon: '📊', title: 'Administración y Negocios', text: 'Administración, economía, finanzas, logística y comercio.',                         border: 'border-t-accent' },
-          { icon: '⚙️', title: 'Técnicos de Industria',     text: 'Técnicos en mantenimiento, electricidad, operaciones y procesos industriales.',     border: 'border-t-verde' },
-          { icon: '💬', title: 'Comunicación y RRHH',        text: 'Periodismo, comunicaciones, psicología laboral y gestión de personas.',             border: 'border-t-sky' },
-          { icon: '🌱', title: 'Otras Disciplinas',          text: 'Todas las carreras son bienvenidas si tienes vocación de impacto regional.',        border: 'border-t-terra' },
-        ].map(({ icon, title, text, border }) => (
-          <div class={`bg-surface rounded-2xl p-6 border-t-[3px] ${border} transition-transform duration-200 hover:-translate-y-1`}>
-            <div class="text-[2rem] mb-3">{icon}</div>
-            <div class="font-bold text-[0.95rem] mb-1">{title}</div>
-            <div class="text-[0.82rem] text-north/60 leading-[1.55]">{text}</div>
-          </div>
-        ))}
+        {
+          [
+            {
+              icon: "🎯",
+              title: "Ingeniería y Tecnología",
+              text: "Ingeniería civil, industrial, en minas, informática y áreas afines.",
+              border: "border-t-sky",
+            },
+            {
+              icon: "⚗️",
+              title: "Ciencias y Medio Ambiente",
+              text: "Geología, química, biología, sustentabilidad y recursos naturales.",
+              border: "border-t-terra",
+            },
+            {
+              icon: "📊",
+              title: "Administración y Negocios",
+              text: "Administración, economía, finanzas, logística y comercio.",
+              border: "border-t-accent",
+            },
+            {
+              icon: "⚙️",
+              title: "Técnicos de Industria",
+              text: "Técnicos en mantenimiento, electricidad, operaciones y procesos industriales.",
+              border: "border-t-verde",
+            },
+            {
+              icon: "💬",
+              title: "Comunicación y RRHH",
+              text: "Periodismo, comunicaciones, psicología laboral y gestión de personas.",
+              border: "border-t-sky",
+            },
+            {
+              icon: "🌱",
+              title: "Otras Disciplinas",
+              text: "Todas las carreras son bienvenidas si tienes vocación de impacto regional.",
+              border: "border-t-terra",
+            },
+          ].map(({ icon, title, text, border }) => (
+            <div
+              class={`bg-surface rounded-2xl p-6 border-t-[3px] ${border} transition-transform duration-200 hover:-translate-y-1`}
+            >
+              <div class="text-[2rem] mb-3">{icon}</div>
+              <div class="font-bold text-[0.95rem] mb-1">{title}</div>
+              <div class="text-[0.82rem] text-north/60 leading-[1.55]">
+                {text}
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
@@ -314,102 +555,220 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 <section id="aliados" class="relative bg-surface overflow-hidden">
   <div class="max-w-[1200px] mx-auto px-8 py-24 lg:px-16">
     <div class="text-center mb-16">
-      <span class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4">05 — Industria y Aliados</span>
-      <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">Las industrias que impulsan el norte</h2>
-      <p class="text-[1.05rem] leading-[1.75] text-north/70 max-w-[600px] mx-auto">
-        Nos aliamos con las empresas y organizaciones más relevantes de la región para ofrecer experiencias auténticas y oportunidades reales a los participantes.
+      <span
+        class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4"
+        >05 — Industria y Aliados</span
+      >
+      <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">
+        Las industrias que impulsan el norte
+      </h2>
+      <p
+        class="text-[1.05rem] leading-[1.75] text-north/70 max-w-[600px] mx-auto"
+      >
+        Nos aliamos con las empresas y organizaciones más relevantes de la
+        región para ofrecer experiencias auténticas y oportunidades reales a los
+        participantes.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-16">
-      {[
-        { icon: '⛏️', name: 'Minería',                       desc: 'El motor histórico del norte. Grandes y medianas compañías mineras participan activamente.' },
-        { icon: '☀️', name: 'Energía',                       desc: 'Energías renovables, solar y eólica. El norte lidera la transición energética del país.' },
-        { icon: '🏗️', name: 'Construcción e Infraestructura', desc: 'Empresas que construyen la base material del desarrollo regional.' },
-        { icon: '🚢', name: 'Logística y Comercio',          desc: 'Puertos, transporte y cadenas de suministro que conectan el norte con el mundo.' },
-      ].map(({ icon, name, desc }) => (
-        <div class="bg-white rounded-2xl px-6 py-8 text-center border border-north/[0.08] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(96,59,255,0.1)]">
-          <div class="text-[2.5rem] mb-4">{icon}</div>
-          <div class="font-bold text-[0.95rem] mb-1">{name}</div>
-          <div class="text-[0.8rem] text-north/50">{desc}</div>
-        </div>
-      ))}
+      {
+        [
+          {
+            icon: "⛏️",
+            name: "Minería",
+            desc: "El motor histórico del norte. Grandes y medianas compañías mineras participan activamente.",
+          },
+          {
+            icon: "☀️",
+            name: "Energía",
+            desc: "Energías renovables, solar y eólica. El norte lidera la transición energética del país.",
+          },
+          {
+            icon: "🏗️",
+            name: "Construcción e Infraestructura",
+            desc: "Empresas que construyen la base material del desarrollo regional.",
+          },
+          {
+            icon: "🚢",
+            name: "Logística y Comercio",
+            desc: "Puertos, transporte y cadenas de suministro que conectan el norte con el mundo.",
+          },
+        ].map(({ icon, name, desc }) => (
+          <div class="bg-white rounded-2xl px-6 py-8 text-center border border-north/[0.08] transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(96,59,255,0.1)]">
+            <div class="text-[2.5rem] mb-4">{icon}</div>
+            <div class="font-bold text-[0.95rem] mb-1">{name}</div>
+            <div class="text-[0.8rem] text-north/50">{desc}</div>
+          </div>
+        ))
+      }
     </div>
 
-    <div class="bg-north rounded-3xl px-8 py-12 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-8">
+    <div
+      class="bg-north rounded-3xl px-8 py-12 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-8"
+    >
       <div class="text-white">
-        <div class="font-black text-[1.8rem] mb-2">¿Tu empresa quiere sumarse?</div>
-        <div class="text-sand/65 text-[0.95rem]">Únete como empresa aliada y accede a talento local, visibilidad regional y la posibilidad de formar a los profesionales que mañana trabajarán contigo.</div>
+        <div class="font-black text-[1.8rem] mb-2">
+          ¿Tu empresa quiere sumarse?
+        </div>
+        <div class="text-sand/65 text-[0.95rem]">
+          Únete como empresa aliada y accede a talento local, visibilidad
+          regional y la posibilidad de formar a los profesionales que mañana
+          trabajarán contigo.
+        </div>
       </div>
       <a
         href="#postulacion"
         class="flex-shrink-0 bg-accent text-north font-bold text-[0.9rem] tracking-[0.05em] uppercase px-8 py-4 rounded-[0.3rem] no-underline inline-block whitespace-nowrap transition-[background,transform] duration-200 hover:bg-sand hover:-translate-y-0.5"
-      >Ser empresa aliada →</a>
+        >Ser empresa aliada →</a
+      >
     </div>
   </div>
 </section>
 
 <!-- ── POSTULACIÓN ── -->
 <section id="postulacion" class="relative bg-north overflow-hidden">
-  <div class="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(96,59,255,0.25)_0%,transparent_70%)] -top-[200px] -right-[200px] pointer-events-none"></div>
-  <div class="absolute w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(255,170,92,0.15)_0%,transparent_70%)] -bottom-[150px] left-[100px] pointer-events-none"></div>
+  <div
+    class="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(96,59,255,0.25)_0%,transparent_70%)] -top-[200px] -right-[200px] pointer-events-none"
+  >
+  </div>
+  <div
+    class="absolute w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(255,170,92,0.15)_0%,transparent_70%)] -bottom-[150px] left-[100px] pointer-events-none"
+  >
+  </div>
 
   <div class="max-w-300 mx-auto px-4 py-24 lg:px-16 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
       <div>
-        <span class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-accent mb-4">06 — Postulación</span>
-        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] text-white mb-6">Da el primer paso hacia tu futuro.</h2>
+        <span
+          class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-accent mb-4"
+          >06 — Postulación</span
+        >
+        <h2
+          class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] text-white mb-6"
+        >
+          Da el primer paso hacia tu futuro.
+        </h2>
         <p class="text-[1.05rem] leading-[1.75] text-sand/65 mb-10">
-          Las postulaciones para la versión 2025 están abiertas. Los cupos son limitados y el proceso es competitivo. No esperes al último momento.
+          Las postulaciones para la versión 2025 están abiertas. Los cupos son
+          limitados y el proceso es competitivo. No esperes al último momento.
         </p>
         <div class="flex flex-col gap-4 mb-12">
-          {[
-            { icon: '📅', label: 'Apertura de postulaciones', val: '15 de abril, 2025' },
-            { icon: '⏰', label: 'Cierre de postulaciones',   val: '15 de mayo, 2025' },
-            { icon: '🎉', label: 'Inicio del programa',       val: '2 de junio, 2025' },
-          ].map(({ icon, label, val }) => (
-            <div class="flex items-center gap-4 px-6 py-4 bg-white/5 border border-sand/10 rounded-[0.8rem]">
-              <span class="text-2xl">{icon}</span>
-              <div>
-                <div class="text-[0.75rem] uppercase tracking-widest text-accent">{label}</div>
-                <div class="font-semibold text-sand text-[0.95rem]">{val}</div>
+          {
+            [
+              {
+                icon: "📅",
+                label: "Apertura de postulaciones",
+                val: "15 de abril, 2025",
+              },
+              {
+                icon: "⏰",
+                label: "Cierre de postulaciones",
+                val: "15 de mayo, 2025",
+              },
+              {
+                icon: "🎉",
+                label: "Inicio del programa",
+                val: "2 de junio, 2025",
+              },
+            ].map(({ icon, label, val }) => (
+              <div class="flex items-center gap-4 px-6 py-4 bg-white/5 border border-sand/10 rounded-[0.8rem]">
+                <span class="text-2xl">{icon}</span>
+                <div>
+                  <div class="text-[0.75rem] uppercase tracking-widest text-accent">
+                    {label}
+                  </div>
+                  <div class="font-semibold text-sand text-[0.95rem]">
+                    {val}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
 
-      <div class="bg-white/6 border border-sand/12 rounded-3xl p-6 backdrop-blur-md">
+      <div
+        class="bg-white/6 border border-sand/12 rounded-3xl p-6 backdrop-blur-md"
+      >
         <div class="font-bold text-[1.6rem] text-white mb-2">Postula aquí</div>
-        <div class="text-[0.88rem] text-sand/50 mb-8">Completa el formulario y nos contactaremos contigo.</div>
+        <div class="text-[0.88rem] text-sand/50 mb-8">
+          Completa el formulario y nos contactaremos contigo.
+        </div>
 
         <div class="grid grid-cols-2 gap-4 mb-5">
           <div class="flex flex-col gap-2">
-            <label class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55">Nombre</label>
-            <input type="text" placeholder="Tu nombre" class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent" style="font-family:inherit" />
+            <label
+              class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
+              >Nombre</label
+            >
+            <input
+              type="text"
+              placeholder="Tu nombre"
+              class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
+              style="font-family:inherit"
+            />
           </div>
           <div class="flex flex-col gap-2">
-            <label class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55">Apellido</label>
-            <input type="text" placeholder="Tu apellido" class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent" style="font-family:inherit" />
+            <label
+              class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
+              >Apellido</label
+            >
+            <input
+              type="text"
+              placeholder="Tu apellido"
+              class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
+              style="font-family:inherit"
+            />
           </div>
         </div>
         <div class="flex flex-col gap-2 mb-5">
-          <label class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55">Correo electrónico</label>
-          <input type="email" placeholder="tucorreo@universidad.cl" class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent" style="font-family:inherit" />
+          <label
+            class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
+            >Correo electrónico</label
+          >
+          <input
+            type="email"
+            placeholder="tucorreo@universidad.cl"
+            class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
+            style="font-family:inherit"
+          />
         </div>
         <div class="grid grid-cols-2 gap-4 mb-5">
           <div class="flex flex-col gap-2">
-            <label class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55">Carrera</label>
-            <input type="text" placeholder="Tu carrera" class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent" style="font-family:inherit" />
+            <label
+              class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
+              >Carrera</label
+            >
+            <input
+              type="text"
+              placeholder="Tu carrera"
+              class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
+              style="font-family:inherit"
+            />
           </div>
           <div class="flex flex-col gap-2">
-            <label class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55">Universidad / Instituto</label>
-            <input type="text" placeholder="Tu institución" class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent" style="font-family:inherit" />
+            <label
+              class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
+              >Universidad / Instituto</label
+            >
+            <input
+              type="text"
+              placeholder="Tu institución"
+              class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
+              style="font-family:inherit"
+            />
           </div>
         </div>
         <div class="flex flex-col gap-2 mb-6">
-          <label class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55">Área de interés</label>
-          <select class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 focus:border-accent" style="font-family:inherit">
+          <label
+            class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
+            >Área de interés</label
+          >
+          <select
+            class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 focus:border-accent"
+            style="font-family:inherit"
+          >
             <option value="" class="bg-north">Selecciona una industria</option>
             <option class="bg-north">Minería</option>
             <option class="bg-north">Energía</option>
@@ -419,7 +778,10 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
             <option class="bg-north">Otra</option>
           </select>
         </div>
-        <button class="w-full bg-accent text-north font-bold text-[0.95rem] tracking-[0.05em] uppercase py-4 rounded-lg border-0 cursor-pointer transition-[opacity,transform] duration-200 hover:opacity-90 hover:-translate-y-px" style="font-family:inherit">
+        <button
+          class="w-full bg-accent text-north font-bold text-[0.95rem] tracking-[0.05em] uppercase py-4 rounded-lg border-0 cursor-pointer transition-[opacity,transform] duration-200 hover:opacity-90 hover:-translate-y-px"
+          style="font-family:inherit"
+        >
           Enviar postulación →
         </button>
       </div>
@@ -428,39 +790,48 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 </section>
 
 <!-- ── FOOTER ── -->
-<footer class="bg-[#160d2e] px-8 py-12 lg:px-32 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-  <div class="font-black text-[1.3rem] text-sand">Conecta<span class="text-accent">Norte</span></div>
-  <div class="text-[0.8rem] text-sand/35">© 2025 Conecta Norte. Todos los derechos reservados.</div>
-  <div class="flex gap-8">
-    {['Términos', 'Privacidad', 'Contacto'].map((link) => (
-      <a href="#" class="text-[0.8rem] text-sand/40 no-underline transition-colors duration-200 hover:text-accent">{link}</a>
-    ))}
+<footer
+  class="bg-[#160d2e] px-8 py-12 lg:px-32 "
+>
+  <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left max-w-6xl mx-auto">
+    <div class="font-black text-[1.3rem] text-sand">
+      <img
+      src="/favicon.svg"
+      alt="Conecta Norte"
+      height="200"
+      width="200"
+      class="w-10 h-10 inline-block mr-2"
+    />
+    </div>
+    <div class="text-[0.8rem] text-sand/35">
+      © 2026 Conecta Norte. Todos los derechos reservados.
+    </div>
   </div>
 </footer>
 
 <script>
-  const hamburger = document.getElementById('hamburger')!;
-  const mobileMenu = document.getElementById('mobileMenu')!;
-  const menuClose  = document.getElementById('menuClose')!;
-  const menuOverlay = document.getElementById('menuOverlay')!;
+  const hamburger = document.getElementById("hamburger")!;
+  const mobileMenu = document.getElementById("mobileMenu")!;
+  const menuClose = document.getElementById("menuClose")!;
+  const menuOverlay = document.getElementById("menuOverlay")!;
 
   const openMenu = () => {
-    mobileMenu.setAttribute('data-open', '');
-    menuOverlay.setAttribute('data-open', '');
-    document.body.style.overflow = 'hidden';
+    mobileMenu.setAttribute("data-open", "");
+    menuOverlay.setAttribute("data-open", "");
+    document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
-    mobileMenu.removeAttribute('data-open');
-    menuOverlay.removeAttribute('data-open');
-    document.body.style.overflow = '';
+    mobileMenu.removeAttribute("data-open");
+    menuOverlay.removeAttribute("data-open");
+    document.body.style.overflow = "";
   };
 
-  hamburger.addEventListener('click', openMenu);
-  menuClose.addEventListener('click', closeMenu);
-  menuOverlay.addEventListener('click', closeMenu);
+  hamburger.addEventListener("click", openMenu);
+  menuClose.addEventListener("click", closeMenu);
+  menuOverlay.addEventListener("click", closeMenu);
 
-  document.querySelectorAll('#mobileMenu a').forEach((link) => {
-    link.addEventListener('click', closeMenu);
+  document.querySelectorAll("#mobileMenu a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 </script>
