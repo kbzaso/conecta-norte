@@ -1,5 +1,5 @@
 ---
-const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`;
+import Hero from "./Hero.astro";
 ---
 
 <!-- ── NAV ── -->
@@ -41,16 +41,16 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
   <button
     id="hamburger"
     aria-label="Abrir menú"
-    class="lg:hidden flex flex-col justify-center gap-[5px] w-9 h-9 bg-transparent border-0 cursor-pointer p-1"
+    class="lg:hidden flex flex-col justify-center gap-1.25 w-9 h-9 bg-transparent border-0 cursor-pointer p-1"
   >
     <span
-      class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"
+      class="block w-5.5 h-0.5 bg-north rounded-sm transition-all duration-250"
     ></span>
     <span
-      class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"
+      class="block w-5.5 h-0.5 bg-north rounded-sm transition-all duration-250"
     ></span>
     <span
-      class="block w-[22px] h-[2px] bg-north rounded-sm transition-all duration-[250ms]"
+      class="block w-5.5 h-0.5 bg-north rounded-sm transition-all duration-250"
     ></span>
   </button>
 </nav>
@@ -58,7 +58,7 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 <!-- ── MOBILE MENU OVERLAY ── -->
 <div
   id="menuOverlay"
-  class="fixed inset-0 z-[200] bg-north/45 backdrop-blur-sm invisible opacity-0 transition-[opacity,visibility] duration-300 data-[open]:visible data-[open]:opacity-100"
+  class="fixed inset-0 z-200 bg-north/45 backdrop-blur-sm invisible opacity-0 transition-[opacity,visibility] duration-300 data-[open]:visible data-[open]:opacity-100"
 >
 </div>
 
@@ -101,92 +101,7 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
   </ul>
 </div>
 
-<!-- ── HERO ── -->
-<section
-  id="inicio"
-  class="relative min-h-screen bg-north items-center flex overflow-hidden pt-25"
->
-  <div
-    class="absolute rounded-full pointer-events-none w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(96,59,255,0.3)_0%,transparent_70%)] -top-[200px] -right-[100px]"
-  >
-  </div>
-  <div
-    class="absolute rounded-full pointer-events-none w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,170,92,0.2)_0%,transparent_70%)] -bottom-[100px] left-[100px]"
-  >
-  </div>
-  <div class="absolute inset-0" style={textureStyle}></div>
-  <div class="flex mx-auto w-full max-w-300 justify-between">
-    <div class="px-8 py-8 lg:py-24 relative z-10">
-      <div
-        class="inline-block text-xs font-medium tracking-wide uppercase text-accent border border-sky/40 px-4 py-[0.4rem] rounded-full mb-8 animate-fade-up animation-delay:0.1s"
-      >
-        ✦ Programa de Vinculación 2026
-      </div>
-      <h1
-        class="font-black text-3xl md:text-5xl lg:text-6xl leading-none text-white mb-6 animate-fade-up animation-delay:0.25s"
-      >
-        <em class="italic font-light text-sand">El norte es el futuro</em><br
-        />Nosotros el puente
-      </h1>
-      <p
-        class="text-[1.1rem] leading-[1.7] text-sand/75 max-w-120 mb-12 animate-fade-up animation-delay:0.4s"
-      >
-        Conectamos a los mejores estudiantes de la región con las industrias que
-        impulsan el desarrollo del norte de Chile.
-      </p>
-      <div
-        class="flex flex-col md:flex-row gap-4 items-center animate-fade-up animation-delay:0.55s"
-      >
-        <a
-          href="#postulacion"
-          class="bg-accent text-north font-bold text-sm tracking-[0.05em] uppercase px-8 py-4 rounded-sm no-underline inline-block transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(240,165,0,0.3)]"
-          >Postular ahora →</a
-        >
-        <a
-          href="#que-es"
-          class="text-sand text-sm font-medium no-underline flex items-center gap-2 transition-[gap] duration-200 hover:gap-3"
-          >Conoce el programa <span>↓</span></a
-        >
-      </div>
-    </div>
-
-    <div class="hidden md:flex py-16 z-10 justify-center items-center">
-      <div class="relative w-90 h-105">
-        <div
-          class="absolute w-[300px] h-[340px] top-0 left-[40px] rotate-3 bg-accent/12 border border-sand/15 rounded-3xl p-8 backdrop-blur-md"
-        >
-        </div>
-        <div
-          class="absolute w-[320px] h-[360px] top-[30px] left-[20px] bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-3xl p-8 backdrop-blur-md animate-float-card"
-        >
-          <div
-            class="w-12 h-12 bg-accent rounded-2xl flex items-center justify-center text-2xl mb-6"
-          >
-            🎓
-          </div>
-          <div
-            class="text-[0.7rem] uppercase tracking-[0.1em] text-sand/50 mb-2"
-          >
-            Estudiantes conectados
-          </div>
-          <div class="font-black text-[2.5rem] leading-none text-white mb-1">
-            +500
-          </div>
-          <div class="text-[0.85rem] text-sand/60">
-            Jóvenes vinculados a la industria regional cada año
-          </div>
-          <div class="flex gap-[0.4rem] mt-8">
-            <div class="w-2 h-2 rounded-full bg-accent"></div>
-            <div class="w-2 h-2 rounded-full bg-accent"></div>
-            <div class="w-2 h-2 rounded-full bg-accent"></div>
-            <div class="w-2 h-2 rounded-full bg-sand/30"></div>
-            <div class="w-2 h-2 rounded-full bg-sand/30"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<Hero />
 
 <!-- ── QUÉ ES CONECTA NORTE ── -->
 <section id="que-es" class="relative bg-white -mt-10">
@@ -429,7 +344,8 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
         >
         <h3 class="font-black text-[2rem] leading-[1.15] mb-6">
           Lo que te llevas al <em class="italic font-light text-sand"
-            >egresar</em>
+            >egresar</em
+          >
         </h3>
         <ul class="list-none flex flex-col gap-4">
           {
@@ -790,18 +706,18 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 </section>
 
 <!-- ── FOOTER ── -->
-<footer
-  class="bg-[#160d2e] px-8 py-12 lg:px-32 "
->
-  <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left max-w-6xl mx-auto">
+<footer class="bg-[#160d2e] px-8 py-12 lg:px-32">
+  <div
+    class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left max-w-6xl mx-auto"
+  >
     <div class="font-black text-[1.3rem] text-sand">
       <img
-      src="/favicon.svg"
-      alt="Conecta Norte"
-      height="200"
-      width="200"
-      class="w-10 h-10 inline-block mr-2"
-    />
+        src="/favicon.svg"
+        alt="Conecta Norte"
+        height="200"
+        width="200"
+        class="w-10 h-10 inline-block mr-2"
+      />
     </div>
     <div class="text-[0.8rem] text-sand/35">
       © 2026 Conecta Norte. Todos los derechos reservados.
@@ -835,3 +751,5 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
     link.addEventListener("click", closeMenu);
   });
 </script>
+
+

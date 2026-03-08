@@ -1,0 +1,98 @@
+---
+import Image from "astro/components/Image.astro";
+import heroModel from "../assets/hero-model.webp";
+const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`;
+---
+
+<section
+  id="inicio"
+  class="relative min-h-screen bg-north items-center flex overflow-hidden pt-25"
+>
+  <div
+    class="absolute rounded-full pointer-events-none w-175 h-175 bg-[radial-gradient(circle,rgba(96,59,255,0.3)_0%,transparent_70%)] -top-50 -right-25"
+  >
+  </div>
+  <div
+    class="absolute rounded-full pointer-events-none w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,170,92,0.2)_0%,transparent_70%)] -bottom-[100px] left-[100px]"
+  >
+  </div>
+  <div class="absolute inset-0" style={textureStyle}></div>
+  <div class="flex mx-auto w-full max-w-300 justify-between">
+    <div class="px-8 py-8 lg:py-24 relative z-10">
+      <div
+        class="inline-block text-xs font-medium tracking-wide uppercase text-accent border border-sky/40 px-4 py-[0.4rem] rounded-full mb-8 animate-fade-up animation-delay:0.1s"
+      >
+        ✦ Programa de Vinculación 2026
+      </div>
+      <h1
+        class="font-black text-3xl md:text-5xl lg:text-6xl leading-none text-white mb-6 animate-fade-up animation-delay:0.25s"
+      >
+        <em class="italic font-light text-sand">El norte es el futuro</em><br
+        />Nosotros el puente
+      </h1>
+      <p
+        class="text-[1.1rem] leading-[1.7] text-sand/75 max-w-120 mb-12 animate-fade-up animation-delay:0.4s"
+      >
+        Conectamos a los mejores estudiantes de la región con las industrias que
+        impulsan el desarrollo del norte de Chile.
+      </p>
+      <div
+        class="flex flex-col md:flex-row gap-4 items-center animate-fade-up animation-delay:0.55s"
+      >
+        <a
+          href="#postulacion"
+          class="bg-accent text-north font-bold text-sm tracking-[0.05em] uppercase px-8 py-4 rounded-sm no-underline inline-block transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(240,165,0,0.3)]"
+          >Postular ahora →</a
+        >
+        <a
+          href="#que-es"
+          class="text-sand text-sm font-medium no-underline flex items-center gap-2 transition-[gap] duration-200 hover:gap-3"
+          >Conoce el programa <span>↓</span></a
+        >
+      </div>
+    </div>
+
+    <div class="hidden md:flex py-16 z-10 justify-center items-center">
+      <div class="relative w-90 h-105">
+        <div
+          class="absolute w-75 h-85 top-0 left-10 rotate-3 p-8"
+        >
+        </div>
+        <Image
+          src={heroModel}
+          alt="Imagen de bienvenida"
+          class="absolute -top-28 z-0 animate-float hero scale-125"
+        />
+        <!-- <img
+          src="/favicon.svg"
+          class="absolute h-20 top-0 left-0"
+        /> -->
+        <div
+          class="absolute w-[320px] h-fit top-56 left-5 bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-3xl p-8 backdrop-blur-md animate-float-card"
+        >
+          <div
+            class="text-[0.7rem] uppercase tracking-widest text-sand/50 mb-2"
+          >
+            Estudiantes conectados
+          </div>
+          <div class="font-black text-[2.5rem] leading-none text-white mb-1">
+            +500
+          </div>
+          <div class="text-[0.85rem] text-sand/60">
+            Jóvenes vinculados a la industria regional cada año
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    mask-image: linear-gradient(
+      black 40%,
+      transparent 90%,
+      transparent
+    );
+  }
+</style>
