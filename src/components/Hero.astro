@@ -1,26 +1,25 @@
 ---
 import Image from "astro/components/Image.astro";
 import heroModel from "../assets/hero-model.webp";
-const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`;
+import desert from "../assets/desierto.webp";
+const textureStyle = `background-image:url(${desert})`;
 ---
 
 <section
   id="inicio"
   class="relative min-h-screen bg-north items-center flex overflow-hidden pt-25"
 >
-  <div
-    class="absolute rounded-full pointer-events-none w-175 h-175 bg-[radial-gradient(circle,rgba(96,59,255,0.3)_0%,transparent_70%)] -top-50 -right-25"
-  >
-  </div>
-  <div
-    class="absolute rounded-full pointer-events-none w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,170,92,0.2)_0%,transparent_70%)] -bottom-[100px] left-[100px]"
-  >
-  </div>
-  <div class="absolute inset-0" style={textureStyle}></div>
+<div class="w-full h-full absolute inset-0">
+  <Image
+    src={desert}
+    alt="Textura de fondo"
+    class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none hero"
+  />
+</div>
   <div class="flex mx-auto w-full max-w-300 justify-between">
     <div class="px-8 py-8 lg:py-24 relative z-10 mx-auto md:mx-0">
       <div
-        class="block text-center md:text-left text-xs font-medium tracking-wide uppercase text-accent border border-sky/40 px-4 py-[0.4rem] rounded-full mb-8 animate-fade-up animation-delay:0.1s md:inline-block"
+        class="block text-center md:text-left text-xs font-medium tracking-wide uppercase text-accent bg-north/90 px-4 py-[0.4rem] rounded-full mb-8 animate-fade-up animation-delay:0.1s md:inline-block"
       >
         ✦ Programa de Vinculación 2026
       </div>
@@ -31,10 +30,11 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
         />Nosotros el puente
       </h1>
       <p
-        class="text-[1.1rem] leading-[1.7] text-sand/75 max-w-120 mb-12 animate-fade-up animation-delay:0.4s text-center md:text-left"
+        class="text-[1.1rem] leading-[1.7] text-sand max-w-120 mb-12 animate-fade-up animation-delay:0.4s text-center md:text-left"
       >
-        Conectamos a los mejores estudiantes de la región con las industrias que
-        impulsan el desarrollo del norte de Chile.
+        Formamos a la próxima generación de especialistas tecnológicos
+        conectando a jóvenes del territorio con las oportunidades de la
+        industria minera y el ecosistema digital.
       </p>
       <div
         class="flex flex-col md:flex-row gap-4 items-center animate-fade-up animation-delay:0.55s"
@@ -52,34 +52,33 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
       </div>
     </div>
 
-    <div class="hidden md:flex py-16 z-10 justify-center items-center">
+    <div class="hidden md:flex z-10 justify-center items-center">
       <div class="relative w-90 h-105">
-        <div
-          class="absolute w-75 h-85 top-0 left-10 rotate-3 p-8"
-        >
-        </div>
         <Image
           src={heroModel}
           alt="Imagen de bienvenida"
-          class="absolute -top-28 z-0 animate-float hero scale-125"
+          class="absolute -top-28 lg:right-20 z-0 animate-float hero scale-125"
         />
-        <!-- <img
-          src="/favicon.svg"
-          class="absolute h-20 top-0 left-0"
-        /> -->
         <div
-          class="absolute w-[320px] h-fit top-56 left-5 bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-3xl p-8 backdrop-blur-md animate-float-card"
+          class="absolute h-fit top-30 right-16 bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-3xl px-6 py-4 backdrop-blur-md animate-float-card"
         >
-          <div
-            class="text-[0.7rem] uppercase tracking-widest text-sand/50 mb-2"
-          >
-            Estudiantes conectados
-          </div>
           <div class="font-black text-[2.5rem] leading-none text-white mb-1">
-            +500
+            +600
           </div>
-          <div class="text-[0.85rem] text-sand/60">
-            Jóvenes vinculados a la industria regional cada año
+          <div class="text-[0.7rem] uppercase tracking-widest text-sand/50">
+            Estudiantes en formación
+          </div>
+        </div>
+        <div
+          class="absolute h-fit w-66 top-60 right-0 bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-3xl px-6 py-4 backdrop-blur-md animate-float-card"
+        >
+          <div class="font-black text-[2.5rem] leading-none text-white mb-1">
+            300
+          </div>
+          <div
+            class="text-[0.7rem] uppercase tracking-widest text-sand/50"
+          >
+            Estudiantes en formación
           </div>
         </div>
       </div>
@@ -89,10 +88,6 @@ const textureStyle = `background-image:url("data:image/svg+xml,%3Csvg width='60'
 
 <style>
   .hero {
-    mask-image: linear-gradient(
-      black 40%,
-      transparent 90%,
-      transparent
-    );
+    mask-image: linear-gradient(black 40%, transparent 90%, transparent);
   }
 </style>

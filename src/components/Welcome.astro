@@ -4,9 +4,9 @@ import Hero from "./Hero.astro";
 
 <!-- ── NAV ── -->
 <nav
-  class="fixed top-5 left-6 right-6 z-50 flex items-center justify-between px-8 bg-white rounded-sm shadow-lg max-w-300 mx-auto"
+  class="fixed top-5 left-6 right-6 z-50 flex items-center justify-between px-8 bg-white/80 backdrop-blur-md rounded-sm shadow-lg max-w-300 mx-auto"
 >
-  <div>
+  <a href="#inicio">
     <img
       src="/logo_nav.svg"
       alt="Conecta Norte"
@@ -14,7 +14,7 @@ import Hero from "./Hero.astro";
       width="200"
       class="w-28 h-20 inline-block mr-2"
     />
-  </div>
+  </a>
 
   <ul class="hidden lg:flex gap-8 list-none">
     {
@@ -29,7 +29,7 @@ import Hero from "./Hero.astro";
         <li>
           <a
             href={href}
-            class="text-[0.8rem] font-semibold tracking-[0.06em] text-north/55 no-underline uppercase transition-colors duration-200 hover:text-sky"
+            class="text-[0.8rem] font-semibold tracking-[0.06em] text-north/55 no-underline uppercase transition-colors hover:underline py-6 duration-200 hover:text-sky"
           >
             {label}
           </a>
