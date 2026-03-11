@@ -1,4 +1,5 @@
 ---
+import Form from "./Form.astro";
 import Hero from "./Hero.astro";
 import Industry from "./Industry.astro";
 import Program from "./Program.astro";
@@ -70,7 +71,7 @@ import WhatIs from "./WhatIs.astro";
 <!-- ── MOBILE MENU PANEL ── -->
 <div
   id="mobileMenu"
-  class="fixed top-0 right-0 z-[300] w-[min(320px,85vw)] h-dvh bg-white px-8 pt-8 pb-12 flex flex-col translate-x-full transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[-8px_0_40px_rgba(44,29,77,0.15)] data-[open]:translate-x-0"
+  class="fixed top-0 right-0 z-300 w-[min(320px,85vw)] h-dvh bg-white px-8 pt-8 pb-12 flex flex-col translate-x-full transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[-8px_0_40px_rgba(44,29,77,0.15)] data-[open]:translate-x-0"
 >
   <button
     id="menuClose"
@@ -79,9 +80,7 @@ import WhatIs from "./WhatIs.astro";
     >✕</button
   >
 
-  <div class="font-black text-2xl text-north mb-10">
-    Conecta<span class="text-sky">Norte</span>
-  </div>
+  
 
   <ul class="list-none flex flex-col">
     {
@@ -112,169 +111,7 @@ import WhatIs from "./WhatIs.astro";
 <StudentRoute />
 <Requirements />
 <Industry />
-
-<!-- ── POSTULACIÓN ── -->
-<section id="postulacion" class="relative bg-north overflow-hidden">
-  <div
-    class="absolute w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(96,59,255,0.25)_0%,transparent_70%)] -top-[200px] -right-[200px] pointer-events-none"
-  >
-  </div>
-  <div
-    class="absolute w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(255,170,92,0.15)_0%,transparent_70%)] -bottom-[150px] left-[100px] pointer-events-none"
-  >
-  </div>
-
-  <div class="max-w-300 mx-auto px-4 py-24 lg:px-16 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-      <div>
-        <span
-          class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-accent mb-4"
-          >06 — Postulación</span
-        >
-        <h2
-          class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] text-white mb-6"
-        >
-          Da el primer paso hacia tu futuro.
-        </h2>
-        <p class="text-[1.05rem] leading-[1.75] text-sand/65 mb-10">
-          Las postulaciones para la versión 2025 están abiertas. Los cupos son
-          limitados y el proceso es competitivo. No esperes al último momento.
-        </p>
-        <div class="flex flex-col gap-4 mb-12">
-          {
-            [
-              {
-                icon: "📅",
-                label: "Apertura de postulaciones",
-                val: "15 de abril, 2025",
-              },
-              {
-                icon: "⏰",
-                label: "Cierre de postulaciones",
-                val: "15 de mayo, 2025",
-              },
-              {
-                icon: "🎉",
-                label: "Inicio del programa",
-                val: "2 de junio, 2025",
-              },
-            ].map(({ icon, label, val }) => (
-              <div class="flex items-center gap-4 px-6 py-4 bg-white/5 border border-sand/10 rounded-[0.8rem]">
-                <span class="text-2xl">{icon}</span>
-                <div>
-                  <div class="text-[0.75rem] uppercase tracking-widest text-accent">
-                    {label}
-                  </div>
-                  <div class="font-semibold text-sand text-[0.95rem]">
-                    {val}
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-
-      <div
-        class="bg-white/6 border border-sand/12 rounded-3xl p-6 backdrop-blur-md"
-      >
-        <div class="font-bold text-[1.6rem] text-white mb-2">Postula aquí</div>
-        <div class="text-[0.88rem] text-sand/50 mb-8">
-          Completa el formulario y nos contactaremos contigo.
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 mb-5">
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
-              >Nombre</label
-            >
-            <input
-              type="text"
-              placeholder="Tu nombre"
-              class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
-              style="font-family:inherit"
-            />
-          </div>
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
-              >Apellido</label
-            >
-            <input
-              type="text"
-              placeholder="Tu apellido"
-              class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
-              style="font-family:inherit"
-            />
-          </div>
-        </div>
-        <div class="flex flex-col gap-2 mb-5">
-          <label
-            class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
-            >Correo electrónico</label
-          >
-          <input
-            type="email"
-            placeholder="tucorreo@universidad.cl"
-            class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
-            style="font-family:inherit"
-          />
-        </div>
-        <div class="grid grid-cols-2 gap-4 mb-5">
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
-              >Carrera</label
-            >
-            <input
-              type="text"
-              placeholder="Tu carrera"
-              class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
-              style="font-family:inherit"
-            />
-          </div>
-          <div class="flex flex-col gap-2">
-            <label
-              class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
-              >Universidad / Instituto</label
-            >
-            <input
-              type="text"
-              placeholder="Tu institución"
-              class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 placeholder:text-sand/30 focus:border-accent"
-              style="font-family:inherit"
-            />
-          </div>
-        </div>
-        <div class="flex flex-col gap-2 mb-6">
-          <label
-            class="text-[0.78rem] font-medium uppercase tracking-[0.08em] text-sand/55"
-            >Área de interés</label
-          >
-          <select
-            class="bg-white/[0.07] border border-sand/15 rounded-lg px-4 py-[0.9rem] text-white text-[0.9rem] outline-none transition-colors duration-200 focus:border-accent"
-            style="font-family:inherit"
-          >
-            <option value="" class="bg-north">Selecciona una industria</option>
-            <option class="bg-north">Minería</option>
-            <option class="bg-north">Energía</option>
-            <option class="bg-north">Construcción e Infraestructura</option>
-            <option class="bg-north">Logística y Comercio</option>
-            <option class="bg-north">Tecnología</option>
-            <option class="bg-north">Otra</option>
-          </select>
-        </div>
-        <button
-          class="w-full bg-accent text-north font-bold text-[0.95rem] tracking-[0.05em] uppercase py-4 rounded-lg border-0 cursor-pointer transition-[opacity,transform] duration-200 hover:opacity-90 hover:-translate-y-px"
-          style="font-family:inherit"
-        >
-          Enviar postulación →
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+<Form />
 
 <!-- ── FOOTER ── -->
 <footer class="bg-[#160d2e] px-8 py-12 lg:px-32">
