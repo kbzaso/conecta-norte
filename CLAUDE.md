@@ -40,7 +40,7 @@
 
 - Sections use `relative overflow-hidden` with `z-10` on content and `absolute` for decorative elements
 - Decorative blobs: `absolute rounded-full pointer-events-none` with radial gradients
-- Cards: `bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-3xl backdrop-blur-md`
+- Cards: `bg-gradient-to-br from-sky/35 to-north/85 border border-sand/15 rounded-md backdrop-blur-md`
 - CTAs: `bg-accent text-north font-bold uppercase tracking-[0.05em] rounded-sm`
 - Pills/badges: `border border-sky/40 rounded-full` or `bg-north/90 rounded-full`
 

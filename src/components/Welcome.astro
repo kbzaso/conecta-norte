@@ -1,5 +1,6 @@
 ---
 import Hero from "./Hero.astro";
+import Program from "./Program.astro";
 import WhatIs from "./WhatIs.astro";
 ---
 
@@ -103,85 +104,12 @@ import WhatIs from "./WhatIs.astro";
 </div>
 
 <Hero />
-
-<!-- ── QUÉ ES CONECTA NORTE ── -->
 <WhatIs />
-
-<!-- ── EL PROGRAMA ── -->
-<section id="el-programa" class="relative bg-north overflow-hidden">
-  <div
-    class="absolute inset-0 bg-gradient-to-br from-[#2c1d4d] via-[#2c1d4d] to-[#1e1435]"
-  >
-  </div>
-  <div class="max-w-[1200px] mx-auto px-8 py-24 lg:px-16 relative z-10">
-    <div class="mb-16">
-      <span
-        class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-accent mb-4"
-        >02 — El Programa</span
-      >
-      <h2
-        class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] text-white mb-6"
-      >
-        Formación, red y experiencia
-      </h2>
-      <p class="text-[1.05rem] leading-[1.75] text-sand/65 max-w-[700px]">
-        Un programa estructurado en fases que combina formación de habilidades
-        blandas, mentoría con líderes de industria y una experiencia de
-        inserción laboral real.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {
-        [
-          [
-            "01",
-            "Formación y Habilidades",
-            "Talleres intensivos de liderazgo, comunicación efectiva, trabajo en equipo y preparación para el mundo laboral. Dictados por expertos de la industria.",
-          ],
-          [
-            "02",
-            "Mentoría 1 a 1",
-            "Cada participante es acompañado por un mentor profesional activo en la industria regional, quien guía su desarrollo personal y profesional durante todo el programa.",
-          ],
-          [
-            "03",
-            "Visitas y Experiencia Laboral",
-            "Visitas técnicas a faenas, plantas y oficinas de las empresas aliadas. Conoce desde adentro cómo operan las industrias que mueven el norte.",
-          ],
-          [
-            "04",
-            "Networking Estratégico",
-            "Eventos de networking con ejecutivos, gerentes y profesionales. Una red de contactos que perdura más allá del programa.",
-          ],
-          [
-            "05",
-            "Proyecto de Innovación",
-            "Equipos de estudiantes desarrollan propuestas de solución a desafíos reales presentados por las empresas aliadas, con posibilidad de implementación.",
-          ],
-          [
-            "06",
-            "Demo Day & Egreso",
-            "Presentación final de proyectos ante ejecutivos de la industria. Ceremonia de egreso con entrega de certificados y reconocimientos especiales.",
-          ],
-        ].map(([num, title, text]) => (
-          <div class="bg-white/[0.04] border border-sand/10 rounded-2xl p-8 transition-[background,transform] duration-300 hover:bg-sky/20 hover:-translate-y-1">
-            <div class="font-black text-[3rem] leading-none text-accent/30 mb-4">
-              {num}
-            </div>
-            <div class="text-[1.1rem] font-semibold text-sand mb-3">
-              {title}
-            </div>
-            <div class="text-[0.88rem] leading-[1.65] text-sand/55">{text}</div>
-          </div>
-        ))
-      }
-    </div>
-  </div>
-</section>
+<Program />
 
 <!-- ── RUTA DEL ESTUDIANTE ── -->
 <section id="ruta-estudiante" class="relative bg-surface">
-  <div class="max-w-[1200px] mx-auto px-8 py-24 lg:px-16">
+  <div class="max-w-300 mx-auto px-8 py-24 lg:px-16">
     <div
       class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start"
     >
