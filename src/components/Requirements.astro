@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import group from "../assets/grupo.webp";
+---
+
+<section id="a-quienes" class="relative bg-white">
+  <div class="max-w-300 mx-auto px-8 pt-24 pb-0 lg:px-16">
+
+    <!-- Top row: text left, requirements right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-12">
+      <div>
+        <span
+          class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4"
+          >04 — A quiénes buscamos</span
+        >
+        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">
+          Talento con propósito regional
+        </h2>
+        <p class="text-[1.05rem] leading-[1.75] text-north/70">
+          Buscamos jóvenes motivados por aprender, crecer y aportar al
+          desarrollo tecnológico del norte de Chile. No se requiere experiencia
+          previa en programación: lo que más valoramos es tu disposición a
+          aprender y tu compromiso con el territorio. Conecta Norte es un
+          programa inclusivo, que busca ampliar el acceso a formación tecnológica para jóvenes del territorio.
+        </p>
+      </div>
+
+      <div class="bg-linear-to-br from-sky to-[#3b21b5] rounded-2xl p-8 text-white">
+        <div class="font-bold text-[0.95rem] text-sand mb-4">
+          Requisitos mínimos
+        </div>
+        <ul class="list-none flex flex-col gap-3">
+          {
+            [
+              "Personas entre 17 y 20 años",
+              "Residencia comprobable en Antofagasta",
+              "Disponibilidad de 6 a 8 horas semanales",
+              "Participación en horario vespertino",
+              "Interés por tecnología e innovación",
+            ].map((item) => (
+              <li class="flex items-center gap-2 text-[0.88rem] text-white/85">
+                <span class="text-accent font-bold">→</span>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full-width image -->
+    <div class="rounded-t-3xl overflow-hidden">
+      <Image
+        src={group}
+        alt="Jóvenes colaborando en el programa Conecta Norte"
+        class="w-full object-cover min-h-72"
+      />
+    </div>
+
+  </div>
+</section>

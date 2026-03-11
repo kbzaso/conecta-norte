@@ -1,0 +1,94 @@
+<section id="ruta-estudiante" class="relative bg-surface">
+  <div class="max-w-300 mx-auto px-8 py-24 lg:px-16">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start"
+    >
+      <div>
+        <span
+          class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4"
+          >03 — Ruta del Estudiante</span
+        >
+        <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] mb-6">
+          Tu camino en Conecta Norte
+        </h2>
+        <p class="text-[1.05rem] leading-[1.75] text-north/70 mb-12">
+          Desde que postulas hasta el día en que egresás con experiencia real y
+          una red de contactos sólida. Así se ve el viaje.
+        </p>
+
+        <div class="relative">
+          <div
+            class="absolute left-4.75 top-6 bottom-6 w-0.5 bg-gradient-to-b from-sky via-terra to-accent"
+          >
+          </div>
+          {
+            [
+              {
+                dot: "border-sky text-sky",
+                title: "Postulación",
+                text: "Abres tu camino en Conecta Norte completando el proceso de inscripción.",
+              },
+              {
+                dot: "border-terra text-terra",
+                title: "Formación Inicial (600 estudiantes)",
+                text: "Accedes a formación online que entrega las bases del mundo tecnológico y digital.",
+              },
+              {
+                dot: "border-accent text-accent",
+                title: "Bootcamp Especializado (300 estudiantes)",
+                text: "Un grupo de estudiantes continúa en una formación intensiva orientada a habilidades tecnológicas aplicadas.",
+              },
+              {
+                dot: "border-verde text-verde",
+                title: "Demo Day & Red Alumnos",
+                text: "Presentas tu proyecto, egresas del programa y pasas a formar parte de la comunidad Conecta Norte.",
+              },
+            ].map(({ dot, title, text }, i) => (
+              <div class="flex gap-6 items-start mb-10 relative">
+                <div
+                  class={`shrink-0 w-10 h-10 rounded-full bg-white border-[3px] ${dot} flex items-center justify-center font-black text-base z-10`}
+                >
+                  {i + 1}
+                </div>
+                <div class="pt-2">
+                  <div class="font-bold text-base mb-1">{title}</div>
+                  <div class="text-[0.88rem] text-north/60 leading-[1.6]">
+                    {text}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="bg-north rounded-3xl p-12 text-white">
+        <span
+          class="block text-[0.7rem] tracking-[0.15em] uppercase text-accent mb-4"
+          >✦ ¿Por qué Conecta Norte?</span
+        >
+        <h3 class="font-black text-[2rem] leading-[1.15] mb-6">
+          Lo que te llevas al <em class="italic font-light text-sand"
+            >egresar</em
+          >
+        </h3>
+        <ul class="list-none flex flex-col gap-4">
+          {
+            [
+              "Certificado de participación avalado por empresas de la industria regional",
+              "Experiencia práctica y trabajo en proyectos reales con impacto en el territorio",
+              "Mentoría personalizada de un profesional activo en tu área de interés",
+              "Red de contactos con ejecutivos y profesionales del norte de Chile",
+              "Ventaja competitiva al momento de buscar tu primer empleo o práctica",
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-[0.9rem] text-sand/75">
+                <span class="text-accent shrink-0 mt-px">✦</span>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
