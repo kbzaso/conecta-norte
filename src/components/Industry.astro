@@ -7,7 +7,7 @@ import CTAIndustry from "./CTAIndustry.astro";
 <section id="aliados" class="relative bg-surface overflow-hidden scroll-mt-10">
   <div class="max-w-300 mx-auto px-8 py-24 lg:px-16">
     <div class="flex flex-col lg:flex-row items-end gap-12 mb-16">
-      <div class="text-center md:text-left w-full lg:w-1/2">
+      <div class="text-left w-full lg:w-1/2">
         <span
           class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-sky mb-4"
           >Industria y Aliados</span
@@ -16,12 +16,24 @@ import CTAIndustry from "./CTAIndustry.astro";
           Las industrias que impulsan el norte
         </h2>
         <p class="text-[1.05rem] leading-[1.75] text-north/70 mx-auto">
-          Conecta Norte existe gracias a alianzas concretas entre industria,
-          instituciones tecnológicas y actores del territorio. Juntos diseñamos
-          formación alineada con las necesidades reales del mercado laboral,
-          abriendo oportunidades para los jóvenes que construirán el futuro
-          digital del norte de Chile.
+          Conecta Norte es financiado por <strong
+            class="text-north font-semibold">BHP Foundation</strong
+          > y ejecutado por
+          <strong class="text-north font-semibold">Desafío Latam</strong> y
+          <strong class="text-north font-semibold"
+            >Fundación País Digital</strong
+          >, en colaboración con
+          <strong class="text-north font-semibold">FME</strong>. Juntos
+          diseñamos formación alineada con las necesidades reales del mercado
+          laboral, abriendo oportunidades para los jóvenes que construirán el
+          futuro digital del norte de Chile.
         </p>
+        <!-- Leadership group callout -->
+        <div class="mt-6 flex items-start gap-3 bg-sky/8 border border-sky/20 rounded-md px-4 py-3">
+          <p class="text-[0.9rem] leading-[1.6] text-north/70">
+            El programa cuenta con el apoyo de un <strong class="text-north font-semibold">Grupo de Liderazgo de Empresas</strong> de la industria, que orienta y guía el desarrollo del programa para asegurar su pertinencia con las necesidades reales del territorio.
+          </p>
+        </div>
       </div>
       <!-- Full-width image -->
       <div class="w-full lg:w-1/2">
@@ -32,6 +44,55 @@ import CTAIndustry from "./CTAIndustry.astro";
         />
       </div>
     </div>
+
+    <!-- Partner logos -->
+    <div class="my-16">
+      <p
+        class="text-[0.75rem] font-medium tracking-[0.15em] uppercase text-north/40 text-center mb-8"
+      >
+        Nuestros aliados
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        {
+          [
+            {
+              name: "BHP Foundation",
+              role: "Financiado por",
+              logo: "/logos/bhp.svg",
+            },
+            {
+              name: "Desafío Latam",
+              role: "Ejecutado por",
+              logo: "/logos/desafio.png",
+            },
+            {
+              name: "Fundación País Digital",
+              role: "Ejecutado por",
+              logo: "/logos/logo-PD.jpg",
+            },
+            {
+              name: "FME",
+              role: "En colaboración con",
+              logo: "/logos/Logo.webp",
+            },
+          ].map(({ name, role, logo }) => (
+            <div class="flex flex-col items-center gap-3 group">
+              <div class="w-full h-28 rounded-lg border border-north/10 bg-white flex items-center justify-center text-north/30 text-xs tracking-wide px-4">
+                <img
+                  src={logo}
+                  alt={`${name} logo`}
+                  class="max-h-18 object-contain"
+                />
+              </div>
+              <span class="text-[0.7rem] text-north/40 tracking-wide uppercase">
+                {role}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
     <CTAIndustry />
   </div>
 </section>
