@@ -1,4 +1,8 @@
-<section id="el-programa" class="relative bg-north overflow-hidden">
+---
+import Badge from "./Badge.astro";
+---
+
+<section id="el-programa" class="relative bg-north overflow-hidden scroll-mt-10">
   <div class="absolute inset-0 bg-linear-to-br from-north via-north to-[#1e1435]"></div>
 
   <!-- Decorative blobs -->
@@ -17,7 +21,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
       <div>
         <span class="block text-[0.75rem] font-medium tracking-[0.15em] uppercase text-accent mb-4">
-          02 — El Programa
+          El Programa
         </span>
         <h2 class="font-black text-[clamp(2rem,3.5vw,3rem)] leading-[1.1] text-white mb-6">
           Una experiencia formativa para la
@@ -36,25 +40,6 @@
 
     <!-- Roadmap Infographic -->
     <div class="relative">
-
-      <!-- Desktop connecting path -->
-      <div class="hidden lg:block absolute top-15 left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-px z-0">
-        <div class="w-full h-full bg-linear-to-r from-sky/40 via-accent/50 to-sky/40 relative">
-          <!-- Animated pulse on the line -->
-          <div class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
-        </div>
-        <!-- Arrow heads between nodes -->
-        {
-          [1, 2, 3].map((i) => (
-            <div
-              class="absolute top-1/2 -translate-y-1/2 text-accent/60 text-sm"
-              style={`left: calc(${i * 33.33}% - 0.5rem)`}
-            >
-              ›
-            </div>
-          ))
-        }
-      </div>
 
       <!-- Nodes grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
@@ -96,40 +81,27 @@ fill="currentColor" viewBox="0 0 24 24" >
               color: "from-accent/30 to-accent/10",
               dot: "bg-accent",
             },
-          ].map(({ num, label, desc, icon, color, dot }) => (
-            <div class="flex flex-col items-center text-left group">
-              <!-- Node circle -->
-              <div class={`relative w-30 h-30 flex flex-col items-center justify-center mb-6 transition-transform duration-300 group-hover:-translate-y-1 backdrop-blur-sm`}>
-                <span class="text-sand/60 [&>svg]:w-14 [&>svg]:h-14 mb-1" set:html={icon} />
-                <span class="font-black text-[0.7rem] tracking-[0.15em] uppercase text-sand/40">{num}</span>
-                <!-- Dot connector (desktop only) -->
-                <div class={`hidden lg:block absolute -bottom-2.5 w-2 h-2 rounded-full ${dot} shadow-lg`} />
-              </div>
-              <!-- Card -->
+          ].map(({ num, label, desc, icon, color, dot }, index) => (
+            <div class="flex flex-col items-center text-left group relative">
               <div class="bg-white/4 border border-sand/10 rounded-md p-6 w-full transition-[background,transform] duration-300 group-hover:bg-sky/10 group-hover:border-sky/20">
                 <span class="text-[1rem] font-bold text-sand mb-2">{label}</span>
                 <p class="text-[0.85rem] leading-[1.65] text-sand/50">{desc}</p>
               </div>
+              <!-- Mobile vertical connector -->
+              {index < 3 && (
+                <div class="block sm:hidden absolute top-full left-1/2 -translate-x-1/2 w-px h-6 bg-linear-to-b from-sky/40 to-sky/10" />
+              )}
+              <!-- Desktop horizontal connector -->
+              {index < 3 && (
+                <div class="hidden lg:block absolute left-full top-1/2 -translate-y-1/2 w-6 h-px bg-linear-to-r from-sky/40 to-sky/10" />
+              )}
             </div>
           ))
         }
       </div>
-
-      <!-- Duration badge -->
-      <div class="flex justify-center mt-12">
-        <div class="inline-flex items-center gap-3 bg-accent/10 border border-accent/25 rounded-full px-7 py-3.5">
-          <span class="text-accent text-[1.5rem] leading-none font-black">15</span>
-          <div>
-            <div class="text-[0.7rem] uppercase tracking-[0.15em] text-sand/50 leading-none">meses de</div>
-            <div class="text-[0.9rem] font-bold text-sand leading-tight">duración total</div>
-          </div>
-          <span class="text-sand/20 text-xl leading-none hidden md:block">·</span>
-          <div class="text-[0.85rem] text-sand/55 leading-snug max-w-56 hidden md:block">
-            competencias técnicas y habilidades profesionales
-          </div>
-        </div>
+<div class="mt-10">
+      <Badge number="6" title="meses de duración total" description="programa intensivo de formación" />
       </div>
-      <p class="text-[0.85rem] text-sand/55 leading-snug md:hidden text-center mt-4">Competencias técnicas y habilidades profesionales</p>
     </div>
   </div>
 </section>

@@ -1,0 +1,23 @@
+---
+const { number, title, description, class: className } = Astro.props;
+---
+
+<div class={className}>
+  <div class="flex justify-center">
+    <div
+      class="inline-flex items-center gap-3 backdrop-blur-md bg-north/60 border border-accent/25 rounded-full px-7 py-3"
+    >
+      <span class="text-accent text-3xl leading-none font-black">{number}</span>
+      <div>
+        <div
+          class="text-[0.7rem] uppercase tracking-[0.15em] text-sand/50 leading-none"
+        >
+          {title}
+        </div>
+        <div class="text-[0.9rem] text-sand leading-tight">
+          {description}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
