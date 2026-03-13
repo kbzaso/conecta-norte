@@ -48,40 +48,24 @@ import Badge from "./Badge.astro";
             {
               num: "01",
               label: "Formación online",
-              desc: "Contenidos digitales accesibles desde cualquier lugar, adaptados al ritmo de cada estudiante.",
-              icon: `<svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-fill="currentColor" viewBox="0 0 24 24" >
-<!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-<path d="M20 14h-5v-1h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v7c0 1.1.9 2 2 2h4v1H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2M5 11V4h14v7zm-1 9v-4h16v4z"></path><path d="M6 17h8v2H6zm11 0a1 1 0 1 0 0 2 1 1 0 1 0 0-2"></path>
-</svg>`,
-              color: "from-sky/30 to-sky/10",
-              dot: "bg-sky",
+              desc: "Formación 100% online, diseñada para estudiantes de Antofagasta, adaptados al ritmo de cada participante.",
             },
             {
               num: "02",
               label: "Aprendizaje práctico",
               desc: "Ejercicios y proyectos aplicados a desafíos reales de la industria tecnológica regional.",
-              icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>`,
-              color: "from-electric/30 to-electric/10",
-              dot: "bg-electric",
             },
             {
               num: "03",
               label: "Mentorías",
               desc: "Acompañamiento personalizado por profesionales activos con experiencia en transformación digital.",
-              icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>`,
-              color: "from-verde/30 to-verde/10",
-              dot: "bg-verde",
             },
             {
               num: "04",
               label: "Trabajo colaborativo",
               desc: "Equipos multidisciplinarios que desarrollan soluciones conjuntas, fortaleciendo habilidades blandas y técnicas.",
-              icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>`,
-              color: "from-accent/30 to-accent/10",
-              dot: "bg-accent",
             },
-          ].map(({ num, label, desc, icon, color, dot }, index) => (
+          ].map(({ num, label, desc }, index) => (
             <div class="flex flex-col items-center text-left group relative">
               <div class="bg-white/4 border border-sand/10 rounded-md p-6 w-full transition-[background,transform] duration-300 group-hover:bg-sky/10 group-hover:border-sky/20">
                 <span class="text-[1rem] font-bold text-sand mb-2">{label}</span>
