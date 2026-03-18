@@ -1,0 +1,53 @@
+---
+interface Props {
+  showBackground?: boolean;
+  showRole?: boolean;
+  size?: "default" | "sm";
+}
+
+const { showBackground = true, showRole = true, size = "default" } = Astro.props;
+
+const isSmall = size === "sm";
+---
+
+<div class={`grid grid-cols-2 ${isSmall ? "grid-cols-2 lg:grid-cols-4"  : "sm:grid-cols-4 gap-6"}`}>
+        {
+          [
+            {
+              name: "BHP Foundation",
+              role: "Impulsado por",
+              logo: "/logos/bhp.svg",
+            },
+            {
+              name: "Desafío Latam",
+              role: "Ejecutado por",
+              logo: "/logos/desafio.png",
+            },
+            {
+              name: "Fundación País Digital",
+              role: "Ejecutado por",
+              logo: "/logos/logo-PD.jpg",
+            },
+            {
+              name: "FME",
+              role: "Colaboración con",
+              logo: "/logos/Logo.webp",
+            },
+          ].map(({ name, role, logo }) => (
+            <div class="flex flex-col items-center gap-2 group">
+              <div class={`w-full rounded-lg flex items-center justify-center px-3 ${isSmall ? "h-16" : "h-28 px-4"} ${showBackground ? "border border-north/10 bg-white" : ""}`}>
+                <img
+                  src={logo}
+                  alt={`${name} logo`}
+                  class={`max-w-full object-contain ${isSmall ? "max-h-10" : "max-h-18"}`}
+                />
+              </div>
+              {showRole && (
+                <span class={`text-center text-north/40 tracking-wide uppercase ${isSmall ? "text-[0.6rem]" : "text-xs"}`}>
+                  {role}
+                </span>
+              )}
+            </div>
+          ))
+        }
+      </div>

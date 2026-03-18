@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import group from "../assets/colaboracion2.webp";
 import CTAIndustry from "./CTAIndustry.astro";
+import LogosGrid from "./LogosGrid.astro";
 ---
 
 <section id="aliados" class="relative bg-surface overflow-hidden scroll-mt-10">
@@ -16,7 +17,7 @@ import CTAIndustry from "./CTAIndustry.astro";
           Las industrias que impulsan el norte
         </h2>
         <p class="text-[1.05rem] leading-[1.75] text-north/70 mx-auto">
-          Conecta Norte es financiado por <strong
+          Conecta Norte es impulsado por <strong
             class="text-north font-semibold">BHP Foundation</strong
           > y ejecutado por
           <strong class="text-north font-semibold">Desafío Latam</strong> y
@@ -52,45 +53,7 @@ import CTAIndustry from "./CTAIndustry.astro";
       >
         Nuestros aliados
       </p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-        {
-          [
-            {
-              name: "BHP Foundation",
-              role: "Financiado por",
-              logo: "/logos/bhp.svg",
-            },
-            {
-              name: "Desafío Latam",
-              role: "Ejecutado por",
-              logo: "/logos/desafio.png",
-            },
-            {
-              name: "Fundación País Digital",
-              role: "Ejecutado por",
-              logo: "/logos/logo-PD.jpg",
-            },
-            {
-              name: "FME",
-              role: "En colaboración con",
-              logo: "/logos/Logo.webp",
-            },
-          ].map(({ name, role, logo }) => (
-            <div class="flex flex-col items-center gap-3 group">
-              <div class="w-full h-28 rounded-lg border border-north/10 bg-white flex items-center justify-center text-north/30 text-xs tracking-wide px-4">
-                <img
-                  src={logo}
-                  alt={`${name} logo`}
-                  class="max-h-18 object-contain"
-                />
-              </div>
-              <span class="text-[0.7rem] text-north/40 tracking-wide uppercase">
-                {role}
-              </span>
-            </div>
-          ))
-        }
-      </div>
+      <LogosGrid />
     </div>
 
     <CTAIndustry />

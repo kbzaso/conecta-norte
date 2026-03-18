@@ -2,6 +2,7 @@
 import Form from "./Form.astro";
 import Hero from "./Hero.astro";
 import Industry from "./Industry.astro";
+import LogosGrid from "./LogosGrid.astro";
 import Program from "./Program.astro";
 import Requirements from "./Requirements.astro";
 import StudentRoute from "./StudentRoute.astro";
@@ -106,6 +107,11 @@ import WhatIs from "./WhatIs.astro";
 </div>
 
 <Hero />
+<div class="h-20 mx-auto z-20 relative bg-white w-full">
+  <div class="absolute -top-6 xs:-top-10  inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-fit bg-surface shadow-xl rounded-md md:px-8">
+    <LogosGrid size="sm" showRole={false} showBackground={false} />
+  </div>
+</div>
 <WhatIs />
 <Program />
 <StudentRoute />
@@ -114,11 +120,11 @@ import WhatIs from "./WhatIs.astro";
 <Form />
 
 <!-- ── FOOTER ── -->
-<footer class="bg-[#160d2e] px-8 py-12 lg:px-32">
+<footer class="bg-white px-8 py-12 lg:px-32">
   <div
     class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left max-w-6xl mx-auto"
   >
-    <div class="font-black text-[1.3rem] text-sand">
+    <div>
       <img
         src="/favicon.svg"
         alt="Conecta Norte"
@@ -127,7 +133,7 @@ import WhatIs from "./WhatIs.astro";
         class="w-10 h-10 inline-block mr-2"
       />
     </div>
-    <div class="text-[0.8rem] text-sand/35">
+    <div class="text-[0.8rem] text-north">
       © 2026 Conecta Norte. Todos los derechos reservados.
     </div>
   </div>
